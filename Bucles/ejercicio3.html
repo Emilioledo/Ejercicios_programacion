@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Escribir un programa que pida al usuario un número entero positivo y muestre por pantalla todos los números
+        impares desde 1 hasta ese número separados por comas.</p>
+    <input type="text" id="numeroEntero" placeholder="Ingrese un numero entero positivo">
+    <button type="submit" onclick={mostrarNumeroImpar()}>Enviar</button>
+
+    <script>
+        function mostrarNumeroImpar() {
+            const numeroIngresado = document.getElementById("numeroEntero").value;
+            validacionNumeroEntero(numeroIngresado);
+            calcularNumeroImpar(numeroIngresado);
+
+        }
+
+        function calcularNumeroImpar(numero) {
+            for (i = 0; i < numero; i++){
+                
+            }
+        }
+
+        function validacionNumeroEntero(numero) {
+            validNumber = null;
+            if (numero > 0) {
+                validNumber = numero;
+                return validNumber;
+            } else {
+                return alert("El numero ingresado no es el correcto, ingrese un numero entero positivo");
+            }
+        }
+    </script>
+</body>
+
+</html>
