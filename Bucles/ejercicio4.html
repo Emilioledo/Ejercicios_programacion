@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Escribir un programa que pregunte al usuario una cantidad a invertir, el interés anual y el número de años,
+        y muestre por pantalla el capital obtenido en la inversión cada año que dura la inversión.</p>
+
+    <label>Ingrese cantidad a invertir</label>
+    <input type="number" id="cantidad_invertida" />
+    <br></br>
+
+    <label>Ingrese el interes anual</label>
+    <input type="number" id="interes_anual" />
+    <br></br>
+
+    <label>Ingrese el numero de años</label>
+    <input type="number" id="cantidad_anio" />
+    <br></br>
+
+    <button type="submit" onclick={calcularInversion()}>Enviar</button>
+
+    <script>
+        function calcularInversion() {
+            const cantidadAInvertir = document.getElementById("cantidad_invertida").value;
+            const interesAnual = document.getElementById("interes_anual").value;
+            const cantidadAnio = document.getElementById("cantidad_anio").value;
+            validarDatos(cantidadAInvertir, interesAnual, cantidadAnio);
+            calcularResultados(validNumberInversion, validNumberInteres, validNumberAnio)
+        }
+
+        function calcularResultados(inversion, interes, anio) {
+            contador = 0;
+            anioToShow = 0;
+            for (i = 0; i < anio; i++) {
+                anioToShow ++;
+                contador++;
+                calcularInteres(inversion, interes);
+                inversion = inversionParcial;
+                document.write ("La ganancias en el año:" + " " + anioToShow + " " +"es de:" + " " + resultadoFinal + "-//-")
+            }
+        }
+
+        function calcularInteres(inv, int) {
+            invInt = parseInt (inv)
+            resultadoFinal = (inv * int) / 100;
+            inversionParcial = (resultadoFinal + invInt);
+            console.log (inversionParcial);
+            return resultadoFinal, inversionParcial
+        }
+
+        function validarDatos(inversion, interes, anio) {
+            validNumberInversion = null;
+            validNumberInteres = null;
+            validNumberAnio = null;
+            if (inversion > 0 && interes > 0 && anio > 0) {
+                validNumberInversion = inversion;
+                validNumberInteres = interes;
+                validNumberAnio = anio;
+                return validNumberInversion, validNumberInteres, validNumberAnio;
+            } else {
+                return alert("El numero ingresado no es el correcto, ingrese un numero entero positivo");
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
