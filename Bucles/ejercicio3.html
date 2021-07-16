@@ -23,8 +23,18 @@
         }
 
         function calcularNumeroImpar(numero) {
-            for (i = 0; i < numero; i++){
-                
+            contador = 0;
+
+            function getNumero(numb) {
+                const numeroPar = numb % 2;
+                if (numeroPar ==! 0) {
+                    return document.write ("Numero impar" + ":" + " " + numb  + " " );
+                }
+            }
+
+            for (i = 0; i < numero; i++) {
+                contador = contador + 1;
+                getNumero (contador);
             }
         }
 
