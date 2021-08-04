@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        Para tributar un determinado impuesto se debe ser mayor de 16 años y tener unos ingresos iguales o superiores a
+        1000 € mensuales.
+        Escribir un programa que pregunte al usuario su edad y sus ingresos mensuales y muestre por pantalla si el
+        usuario tiene que tributar o no.
+    </p>
+
+    <form>
+        <div>
+            <label for="edad">Edad</label>
+            <input type="number" id="edad">
+        </div>
+        <div>
+            <label for="ingresos">Ingresos Mensuales</label>
+            <input type="number" id="ingresos">
+        </div>
+        <div>
+            <button type="submit" onclick={tributar()}>Enviar</button>
+        </div>
+    </form>
+
+    <script>
+        function tributar() {
+            let ingresosMensuales = document.getElementById("ingresos").value;
+            let edad = document.getElementById("edad").value;
+            console.log(ingresosMensuales, edad)
+            if (ingresosMensuales > 1000 && edad >= 16) {
+                document.write("El usuario tiene que tributar");
+            } else {
+                document.write("El usuario NO tiene que tributar");
+            }
+        }
+
+    </script>
+</body>
+
+</html>
